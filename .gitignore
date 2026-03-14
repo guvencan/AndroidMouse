@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Fastlane — Google Play API key (global, set via SUPPLY_JSON_KEY env var in ~/.zshrc)

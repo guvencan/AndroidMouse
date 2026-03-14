@@ -1,3 +1,58 @@
 <resources>
-    <string name="app_name">AndroidMouse</string>
+    <string name="app_name">RemotePad</string>
+
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="connecting">Connecting…</string>
+
+    <!-- TouchpadScreen -->
+    <string name="cd_jiggler">Jiggler</string>
+    <string name="cd_disconnect">Disconnect</string>
+    <string name="walkthrough_jiggler_title">Mouse Jiggler</string>
+    <string name="walkthrough_jiggler_body">Tap this icon to keep your PC awake.</string>
+    <string name="walkthrough_jiggler_desc">Automatically moves the cursor — prevents sleep mode and screensaver.</string>
+    <string name="walkthrough_ok">OK</string>
+    <string name="walkthrough_try">Try &#x2192;</string>
+
+    <!-- DeviceScanScreen -->
+    <string name="scan_title">Select Device</string>
+    <string name="scan_unpair_title">Unpair device?</string>
+    <string name="scan_unpair_message">Remove %1$s from paired devices?</string>
+    <string name="scan_unpair">Unpair</string>
+    <string name="scan_cancel">Cancel</string>
+    <string name="scan_computers_only">Computers only</string>
+    <string name="scan_paired_devices">Paired Devices</string>
+    <string name="scan_no_paired_computers">No paired computers found.</string>
+    <string name="scan_no_paired_devices">No paired devices found.</string>
+    <string name="scan_nearby_devices">Nearby Devices</string>
+    <string name="scan_stop">Stop</string>
+    <string name="scan_scan">Scan</string>
+    <string name="scan_hint">Tap Scan to find nearby devices.</string>
+    <string name="scan_cd_unpair">Unpair</string>
+    <string name="scan_pair">Pair</string>
+
+    <!-- JigglerScreen -->
+    <string name="jiggler_title">Jiggler</string>
+    <string name="cd_back">Back</string>
+    <string name="jiggler_active">Active</string>
+    <string name="jiggler_inactive">Inactive</string>
+    <string name="jiggler_moving_every">Moving every %1$ds</string>
+    <string name="jiggler_toggle_to_start">Toggle to start</string>
+    <string name="jiggler_interval_label">Interval</string>
+    <string name="jiggler_interval_min">1s</string>
+    <string name="jiggler_interval_max">2min</string>
+    <string name="jiggler_range_label">Move Range</string>
+    <string name="jiggler_range_min">Subtle</string>
+    <string name="jiggler_range_max">Large</string>
+
+    <!-- MouseButtonBar -->
+    <string name="btn_left">Left</string>
+    <string name="btn_middle">Middle</string>
+    <string name="btn_right">Right</string>
+
+    <!-- Notification -->
+    <string name="notification_title">RemotePad</string>
+    <string name="notification_text">Bluetooth mouse active</string>
+    <string name="notification_channel_name">Mouse Service</string>
 </resources>

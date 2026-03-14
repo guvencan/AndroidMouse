@@ -1,0 +1,9 @@
+🚀 Primera versión de RemotePad
+
+• Mouse Jiggler — mantiene tu PC activo automáticamente, evita el modo reposo y el salvapantallas
+• Trackpad Bluetooth HID — usa tu móvil como ratón inalámbrico, sin Wi-Fi ni software en el PC
+• Un toque = clic izquierdo, dos dedos = clic derecho
+• Escanear y emparejar dispositivos Bluetooth desde la app
+• Filtro: mostrar solo ordenadores
+• Conexión automática al último dispositivo usado
+• Disponible en 9 idiomas

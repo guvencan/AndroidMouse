@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">RemotePad</string>
+
+    <!-- Common -->
+    <string name="ok">Tamam</string>
+    <string name="cancel">İptal</string>
+    <string name="connecting">Bağlanıyor…</string>
+
+    <!-- TouchpadScreen -->
+    <string name="cd_jiggler">Jiggler</string>
+    <string name="cd_disconnect">Bağlantıyı Kes</string>
+    <string name="walkthrough_jiggler_title">Mouse Jiggler</string>
+    <string name="walkthrough_jiggler_body">PC\'ni uyanık tutmak için bu ikona dokun.</string>
+    <string name="walkthrough_jiggler_desc">Ekranı otomatik hareket ettirir — uyku modu ve ekran koruyucuyu engeller.</string>
+    <string name="walkthrough_ok">Tamam</string>
+    <string name="walkthrough_try">Dene &#x2192;</string>
+
+    <!-- DeviceScanScreen -->
+    <string name="scan_title">Cihaz Seç</string>
+    <string name="scan_unpair_title">Eşleşme kaldırılsın mı?</string>
+    <string name="scan_unpair_message">%1$s cihazının eşleşmesi kaldırılsın mı?</string>
+    <string name="scan_unpair">Kaldır</string>
+    <string name="scan_cancel">İptal</string>
+    <string name="scan_computers_only">Yalnızca bilgisayarlar</string>
+    <string name="scan_paired_devices">Eşleşmiş Cihazlar</string>
+    <string name="scan_no_paired_computers">Eşleşmiş bilgisayar bulunamadı.</string>
+    <string name="scan_no_paired_devices">Eşleşmiş cihaz bulunamadı.</string>
+    <string name="scan_nearby_devices">Yakındaki Cihazlar</string>
+    <string name="scan_stop">Durdur</string>
+    <string name="scan_scan">Tara</string>
+    <string name="scan_hint">Yakındaki cihazları bulmak için Tara\'ya dokun.</string>
+    <string name="scan_cd_unpair">Eşleşmeyi Kaldır</string>
+    <string name="scan_pair">Eşleştir</string>
+
+    <!-- JigglerScreen -->
+    <string name="jiggler_title">Jiggler</string>
+    <string name="cd_back">Geri</string>
+    <string name="jiggler_active">Aktif</string>
+    <string name="jiggler_inactive">Pasif</string>
+    <string name="jiggler_moving_every">Her %1$d saniyede hareket ediyor</string>
+    <string name="jiggler_toggle_to_start">Başlatmak için açın</string>
+    <string name="jiggler_interval_label">Aralık</string>
+    <string name="jiggler_interval_min">1sn</string>
+    <string name="jiggler_interval_max">2dk</string>
+    <string name="jiggler_range_label">Hareket Mesafesi</string>
+    <string name="jiggler_range_min">Az</string>
+    <string name="jiggler_range_max">Çok</string>
+
+    <!-- MouseButtonBar -->
+    <string name="btn_left">Sol</string>
+    <string name="btn_middle">Orta</string>
+    <string name="btn_right">Sağ</string>
+
+    <!-- Notification -->
+    <string name="notification_title">RemotePad</string>
+    <string name="notification_text">Bluetooth mouse aktif</string>
+    <string name="notification_channel_name">Mouse Servisi</string>
+</resources>

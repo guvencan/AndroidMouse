@@ -1,0 +1,9 @@
+🚀 Première version de RemotePad
+
+• Mouse Jiggler — maintient votre PC actif automatiquement, empêche veille & économiseur d'écran
+• Trackpad Bluetooth HID — utilisez votre téléphone comme souris sans fil, sans Wi-Fi ni logiciel PC
+• Un doigt = clic gauche, deux doigts = clic droit
+• Scanner & associer des appareils Bluetooth depuis l'app
+• Filtre : afficher uniquement les ordinateurs
+• Connexion automatique au dernier appareil utilisé
+• Disponible en 9 langues

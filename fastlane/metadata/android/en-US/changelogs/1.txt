@@ -1,0 +1,9 @@
+🚀 Initial release of RemotePad
+
+• Mouse Jiggler — keeps your PC awake automatically, prevents sleep & screensaver
+• Bluetooth HID trackpad — use your phone as a wireless mouse, no Wi-Fi or PC software needed
+• Single tap = left click, two-finger tap = right click
+• Scan & pair Bluetooth devices directly from the app
+• Filter to show computers only
+• Auto-connect to last used device on launch
+• Available in 9 languages

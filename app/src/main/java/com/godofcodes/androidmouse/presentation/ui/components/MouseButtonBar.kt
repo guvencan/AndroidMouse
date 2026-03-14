@@ -6,7 +6,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.godofcodes.androidmouse.R
 import com.godofcodes.androidmouse.domain.model.MouseButton
 import com.godofcodes.androidmouse.domain.model.MouseEvent
 
@@ -20,19 +22,19 @@ fun MouseButtonBar(
         horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         MouseButton(
-            label = "Left",
+            label = stringResource(R.string.btn_left),
             modifier = Modifier.weight(1f),
             button = MouseButton.LEFT,
             onMouseEvent = onMouseEvent,
         )
         MouseButton(
-            label = "Middle",
+            label = stringResource(R.string.btn_middle),
             modifier = Modifier.weight(0.7f),
             button = MouseButton.MIDDLE,
             onMouseEvent = onMouseEvent,
         )
         MouseButton(
-            label = "Right",
+            label = stringResource(R.string.btn_right),
             modifier = Modifier.weight(1f),
             button = MouseButton.RIGHT,
             onMouseEvent = onMouseEvent,

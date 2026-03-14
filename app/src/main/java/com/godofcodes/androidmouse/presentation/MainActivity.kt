@@ -16,14 +16,28 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    private val btPermissions = arrayOf(
+        Manifest.permission.BLUETOOTH_CONNECT,
+        Manifest.permission.BLUETOOTH_SCAN,
+    )
+
     private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
-    ) { /* results handled by runtime checks in BT layer */ }
+    ) { results ->
+        if (results.values.all { it }) startForegroundService(MouseForegroundService.startIntent(this))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestBluetoothPermissions()
-        startForegroundService(MouseForegroundService.startIntent(this))
+
+        val allGranted = btPermissions.all {
+            ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED
+        }
+        if (allGranted) {
+            startForegroundService(MouseForegroundService.startIntent(this))
+        } else {
+            permissionLauncher.launch(btPermissions)
+        }
 
         setContent {
             AndroidMouseTheme {
@@ -36,16 +50,5 @@ class MainActivity : ComponentActivity() {
     override fun onDestroy() {
         super.onDestroy()
         startService(MouseForegroundService.stopIntent(this))
-    }
-
-    private fun requestBluetoothPermissions() {
-        val permissions = arrayOf(
-            Manifest.permission.BLUETOOTH_CONNECT,
-            Manifest.permission.BLUETOOTH_SCAN,
-        )
-        val missing = permissions.filter {
-            ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
-        }
-        if (missing.isNotEmpty()) permissionLauncher.launch(missing.toTypedArray())
     }
 }

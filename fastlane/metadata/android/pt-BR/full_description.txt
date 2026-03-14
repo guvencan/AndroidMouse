@@ -1,0 +1,45 @@
+O único app Android que combina mouse jiggler com trackpad Bluetooth completo — sem Wi-Fi, sem software no PC, sem cabos.
+
+Mantenha seu PC ativo durante apresentações, videochamadas ou ausências. Depois use o mesmo app como mouse Bluetooth sem fio. O RemotePad conecta via Bluetooth HID e é reconhecido como um mouse real.
+
+😴 MOUSE JIGGLER
+• Mantém a tela do PC ativa automaticamente
+• Evita suspensão, protetor de tela e bloqueio de tela
+• Intervalo (1–120 seg.) e alcance de movimento personalizáveis
+• Roda em segundo plano mesmo ao trocar de app
+• Padrão aleatório para comportamento natural e imperceptível
+
+🖱️ TRACKPAD BLUETOOTH
+• Controle suave do cursor com sensibilidade ajustável
+• Um toque → Clique esquerdo
+• Dois dedos → Clique direito
+• Sem drivers no PC
+
+📡 BLUETOOTH HID
+• Conexão Bluetooth pura — sem Wi-Fi necessário
+• Reconhecido como mouse HID real
+• Sem instalação no dispositivo de destino
+• Compatível com Windows, macOS, Linux, Android TV
+• Lembra o último dispositivo conectado
+
+🔍 GERENCIAMENTO DE DISPOSITIVOS
+• Escaneie e emparelhe dispositivos Bluetooth pelo app
+• Filtro: mostrar apenas computadores
+• Desemparelhar com um toque
+• Conexão automática ao iniciar
+
+POR QUE REMOTEPAD?
+A maioria dos mouse jiggler funciona apenas no Windows. O RemotePad é a alternativa Android — leve no bolso, conecte em segundos e mantenha qualquer PC ativo sem instalar nada.
+
+Perfeito para:
+• Manter a tela ativa no home office ou apresentações
+• Controlar o PC do sofá
+• Substituir um jiggler ou controle de apresentação dedicado
+• Qualquer situação onde o mouse está fora de alcance
+
+REQUISITOS
+• Android 9.0 (Pie) ou superior
+• Bluetooth 4.0+ no celular
+• PC ou dispositivo com Bluetooth
+
+Baixe o RemotePad — mouse jiggler e trackpad Bluetooth em um só app.

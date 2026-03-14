@@ -18,6 +18,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -38,6 +39,14 @@ class TouchpadViewModel @Inject constructor(
 
     val jigglerEnabled: StateFlow<Boolean> = jigglerController.isRunning
         .stateIn(viewModelScope, SharingStarted.Eagerly, false)
+
+    val showJigglerTooltip: StateFlow<Boolean> = appPrefs.jigglerTooltipShown
+        .map { !it }
+        .stateIn(viewModelScope, SharingStarted.Eagerly, false)
+
+    fun dismissJigglerTooltip() {
+        viewModelScope.launch { appPrefs.markJigglerTooltipShown() }
+    }
 
     private val _navigateToScan = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
     val navigateToScan = _navigateToScan.asSharedFlow()

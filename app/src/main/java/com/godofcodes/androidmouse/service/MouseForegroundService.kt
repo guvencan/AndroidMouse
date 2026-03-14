@@ -9,6 +9,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import com.godofcodes.androidmouse.R
 import com.godofcodes.androidmouse.presentation.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -53,8 +54,8 @@ class MouseForegroundService : Service() {
             PendingIntent.FLAG_IMMUTABLE,
         )
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("AndroidMouse")
-            .setContentText("Bluetooth mouse active")
+            .setContentTitle(getString(R.string.notification_title))
+            .setContentText(getString(R.string.notification_text))
             .setSmallIcon(android.R.drawable.ic_menu_compass)
             .setContentIntent(openIntent)
             .setOngoing(true)
@@ -64,7 +65,7 @@ class MouseForegroundService : Service() {
     private fun createNotificationChannel() {
         val channel = NotificationChannel(
             CHANNEL_ID,
-            "Mouse Service",
+            getString(R.string.notification_channel_name),
             NotificationManager.IMPORTANCE_LOW,
         )
         getSystemService(NotificationManager::class.java).createNotificationChannel(channel)

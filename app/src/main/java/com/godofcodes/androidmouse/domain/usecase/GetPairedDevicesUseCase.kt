@@ -7,5 +7,5 @@ import javax.inject.Inject
 class GetPairedDevicesUseCase @Inject constructor(
     private val repository: BluetoothRepository,
 ) {
-    operator fun invoke(): List<BtDevice> = repository.getPairedDevices()
+    operator fun invoke(computersOnly: Boolean = false): List<BtDevice> = repository.getPairedDevices(computersOnly)
 }

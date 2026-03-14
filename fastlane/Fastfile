@@ -1,0 +1,44 @@
+default_platform(:android)
+
+platform :android do
+
+  desc "Upload metadata & screenshots to Play Store (no APK)"
+  lane :metadata do
+    supply(
+      json_key: ENV["SUPPLY_JSON_KEY"],
+      track: "production",
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_images: false,
+      skip_upload_screenshots: false,
+    )
+  end
+
+  desc "Upload AAB to internal testing track"
+  lane :internal do
+    gradle(task: "bundle", build_type: "Release")
+    supply(
+      json_key: ENV["SUPPLY_JSON_KEY"],
+      track: "internal",
+    )
+  end
+
+  desc "Promote internal → alpha"
+  lane :alpha do
+    supply(
+      json_key: ENV["SUPPLY_JSON_KEY"],
+      track: "internal",
+      track_promote_to: "alpha",
+    )
+  end
+
+  desc "Promote alpha → production"
+  lane :production do
+    supply(
+      json_key: ENV["SUPPLY_JSON_KEY"],
+      track: "alpha",
+      track_promote_to: "production",
+    )
+  end
+
+end

@@ -1,0 +1,45 @@
+Mouse jiggler ile tam Bluetooth trackpad'i birleştiren tek Android uygulaması — Wi-Fi yok, PC'ye kurulum yok, kablo yok.
+
+Sunum sırasında, video görüşmelerinde veya bilgisayar başından ayrıldığında PC'ni uyanık tut. Sonra aynı uygulamayı kablosuz Bluetooth mouse olarak kullan. RemotePad, Bluetooth HID protokolüyle bağlanır ve bilgisayarın onu gerçek bir mouse olarak tanır.
+
+😴 MOUSE JIGGLER
+• Bilgisayar ekranını otomatik uyanık tutar
+• Sunum sırasında ekran koruyucu ve kilit ekranını engeller
+• Hareket aralığı (1–120 sn) ve mesafesi özelleştirilebilir
+• Uygulama arka plana geçse bile çalışmaya devam eder
+• Doğal ve fark edilmez davranış için rastgele hareket deseni
+
+🖱️ BLUETOOTH TRACKPAD
+• Ayarlanabilir hassasiyetle akıcı imleç kontrolü
+• Tek parmak dokunuş → Sol tık
+• İki parmak dokunuş → Sağ tık
+• PC'de sürücü kurulumu gerektirmez
+
+📡 BLUETOOTH HID
+• Tamamen Bluetooth bağlantısı — Wi-Fi ağına gerek yok
+• Bilgisayar tarafından gerçek HID mouse olarak tanınır
+• Hedef cihaza yazılım kurulumu gerekmez
+• Windows, macOS, Linux, Android TV ile uyumlu
+• Son bağlanan cihazı hatırlar, otomatik bağlanır
+
+🔍 CİHAZ YÖNETİMİ
+• Uygulama içinden yeni Bluetooth cihazları tara ve eşleştir
+• Yalnızca bilgisayarları göster filtresi
+• Tek dokunuşla eşleşme kaldırma
+• Açılışta son cihaza otomatik bağlanma
+
+NEDEN REMOTEPAD?
+Çoğu mouse jiggler uygulaması yalnızca Windows'ta çalışır. RemotePad, Android alternatifi — cebinde taşı, saniyeler içinde Bluetooth ile bağlan ve hiçbir şey yüklemeden PC'ni uyanık tut.
+
+İdeal kullanım alanları:
+• Uzaktan çalışma veya sunum sırasında ekranı aktif tutmak
+• Koltuktan PC'yi kontrol etmek
+• Ayrı bir jiggler cihazının veya clicker'ın yerini almak
+• Mouse'un ulaşamadığı her durum
+
+GEREKSİNİMLER
+• Android 9.0 (Pie) veya üzeri
+• Telefonda Bluetooth 4.0+
+• Bluetooth destekli PC veya cihaz
+
+RemotePad'i indir — mouse jiggler ve Bluetooth trackpad tek uygulamada.

@@ -23,10 +23,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.godofcodes.androidmouse.R
 
 private val Green = Color(0xFF4CAF50)
 private val GreyOff = Color(0xFF9E9E9E)
@@ -57,10 +59,13 @@ fun JigglerScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Jiggler") },
+                title = { Text(stringResource(R.string.jiggler_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                        Icon(
+                            Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = stringResource(R.string.cd_back),
+                        )
                     }
                 },
             )
@@ -73,7 +78,6 @@ fun JigglerScreen(
                 .padding(horizontal = 20.dp, vertical = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            // ── Status card ──────────────────────────────────────────────────
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
@@ -104,7 +108,7 @@ fun JigglerScreen(
                         )
                         Column {
                             Text(
-                                text = if (isRunning) "Active" else "Inactive",
+                                text = stringResource(if (isRunning) R.string.jiggler_active else R.string.jiggler_inactive),
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.SemiBold,
                                 color = if (isRunning)
@@ -114,9 +118,9 @@ fun JigglerScreen(
                             )
                             Text(
                                 text = if (isRunning)
-                                    "Moving every ${config.intervalMs / 1000}s"
+                                    stringResource(R.string.jiggler_moving_every, config.intervalMs / 1000)
                                 else
-                                    "Toggle to start",
+                                    stringResource(R.string.jiggler_toggle_to_start),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -138,26 +142,24 @@ fun JigglerScreen(
 
             Spacer(Modifier.height(4.dp))
 
-            // ── Interval slider card ─────────────────────────────────────────
             SliderCard(
                 icon = Icons.Default.Timer,
-                label = "Interval",
+                label = stringResource(R.string.jiggler_interval_label),
                 valueText = "${config.intervalMs / 1000}s",
-                startLabel = "1s",
-                endLabel = "2min",
+                startLabel = stringResource(R.string.jiggler_interval_min),
+                endLabel = stringResource(R.string.jiggler_interval_max),
                 value = (config.intervalMs / 1000).toFloat(),
                 onValueChange = { viewModel.setInterval(it.toLong() * 1000) },
                 valueRange = 1f..120f,
                 steps = 118,
             )
 
-            // ── Move range slider card ───────────────────────────────────────
             SliderCard(
                 icon = Icons.Default.OpenWith,
-                label = "Move Range",
+                label = stringResource(R.string.jiggler_range_label),
                 valueText = "${config.moveRange}px",
-                startLabel = "Subtle",
-                endLabel = "Large",
+                startLabel = stringResource(R.string.jiggler_range_min),
+                endLabel = stringResource(R.string.jiggler_range_max),
                 value = config.moveRange.toFloat(),
                 onValueChange = { viewModel.setMoveRange(it.toInt()) },
                 valueRange = 1f..100f,

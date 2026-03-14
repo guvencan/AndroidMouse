@@ -1,0 +1,9 @@
+🚀 Versão inicial do RemotePad
+
+• Mouse Jiggler — mantém seu PC ativo automaticamente, evita suspensão e protetor de tela
+• Trackpad Bluetooth HID — use seu celular como mouse sem fio, sem Wi-Fi ou software no PC
+• Um toque = clique esquerdo, dois dedos = clique direito
+• Escanear e emparelhar dispositivos Bluetooth pelo app
+• Filtro: mostrar apenas computadores
+• Conexão automática ao último dispositivo usado
+• Disponível em 9 idiomas

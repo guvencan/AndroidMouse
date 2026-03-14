@@ -1,0 +1,9 @@
+🚀 RemotePad ilk sürümü
+
+• Mouse Jiggler — PC'ni otomatik uyanık tutar, uyku ve ekran koruyucuyu engeller
+• Bluetooth HID trackpad — telefonu kablosuz mouse olarak kullan, Wi-Fi veya PC yazılımı gerekmez
+• Tek parmak = sol tık, iki parmak = sağ tık
+• Bluetooth cihazları uygulama içinden tara ve eşleştir
+• Yalnızca bilgisayarları göster filtresi
+• Son kullanılan cihaza otomatik bağlanma
+• 9 dil desteği
