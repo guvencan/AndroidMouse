@@ -1,10 +1,12 @@
 La seule application Android combinant un mouse jiggler et un trackpad Bluetooth complet — sans Wi-Fi, sans logiciel sur le PC, sans câble.
 
-Gardez votre PC éveillé pendant les présentations, les appels vidéo ou vos absences. Utilisez ensuite la même app comme souris Bluetooth. RemotePad se connecte via Bluetooth HID et est reconnu comme une vraie souris.
+Gardez votre PC éveillé pendant les présentations, les appels vidéo ou vos absences. Empêchez Microsoft Teams ou Slack de vous afficher comme « Absent ». Utilisez ensuite la même app comme souris Bluetooth. RemotePad se connecte via Bluetooth HID et est reconnu comme une vraie souris.
 
 😴 MOUSE JIGGLER
 • Maintient l'écran du PC actif automatiquement
 • Empêche veille, économiseur d'écran et verrouillage
+• Bloque le statut « Absent » dans Teams & Slack
+• Restez « Actif » pendant les pauses ou longues réunions
 • Intervalle (1–120 sec) et amplitude personnalisables
 • Fonctionne en arrière-plan même en changeant d'app
 • Mouvement aléatoire pour un comportement naturel et discret
@@ -32,7 +34,9 @@ POURQUOI REMOTEPAD ?
 La plupart des mouse jiggler ne fonctionnent que sous Windows. RemotePad est l'alternative Android — emportez-le dans votre poche, connectez-le en quelques secondes et gardez n'importe quel PC éveillé sans rien installer.
 
 Idéal pour :
-• Maintenir l'écran actif en télétravail ou en présentation
+• Les télétravailleurs qui doivent rester actifs sur Teams ou Slack
+• Les employés de bureau qui s'éloignent brièvement de leur poste
+• Maintenir l'écran actif lors de présentations
 • Contrôler le PC depuis le canapé
 • Remplacer un jiggler ou une télécommande de présentation
 • Toute situation où la souris est hors de portée

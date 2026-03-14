@@ -14,12 +14,22 @@ platform :android do
     )
   end
 
-  desc "Upload AAB to internal testing track"
+  desc "Build signed release AAB"
+  lane :build do
+    gradle(
+      task: "bundle",
+      build_type: "Release",
+      print_command: false,
+    )
+  end
+
+  desc "Build & upload AAB to internal testing track"
   lane :internal do
-    gradle(task: "bundle", build_type: "Release")
+    build
     supply(
       json_key: ENV["SUPPLY_JSON_KEY"],
       track: "internal",
+      aab: lane_context[SharedValues::GRADLE_AAB_OUTPUT_PATH],
     )
   end
 
@@ -39,6 +49,14 @@ platform :android do
       track: "alpha",
       track_promote_to: "production",
     )
+  end
+
+  desc "Bump versionCode and versionName, then build internal"
+  lane :release do |options|
+    version = options[:version] || UI.input("Version name (e.g. 1.1):")
+    android_set_version_name(version_name: version)
+    android_set_version_code
+    internal
   end
 
 end

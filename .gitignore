@@ -1,17 +1,49 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
+# Built outputs
 /build
-/captures
+app/build
+*.apk
+*.aab
+*.ap_
+
+# Gradle
+.gradle
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# IntelliJ / Android Studio
+*.iml
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/.gitignore
+.idea/deploymentTargetDropDown.xml
+.idea/migrations.xml
+.idea/compiler.xml
+
+# Local config (machine-specific)
+local.properties
+/local.properties
+
+# Native build
 .externalNativeBuild
 .cxx
-local.properties
 
-# Fastlane — Google Play API key (global, set via SUPPLY_JSON_KEY env var in ~/.zshrc)
+# Captures / profiling
+/captures
+
+# macOS
+.DS_Store
+
+# Release signing (never commit)
+keystore.properties
+*.jks
+*.keystore
+
+# Fastlane — Google Play API key lives outside the repo (SUPPLY_JSON_KEY env var in ~/.zshrc)
+
+# Module files
+*.iml
