@@ -31,6 +31,7 @@ platform :android do
       json_key: ENV["SUPPLY_JSON_KEY"],
       track: "internal",
       aab: lane_context[SharedValues::GRADLE_AAB_OUTPUT_PATH],
+      skip_upload_apk: true,
     )
   end
 
