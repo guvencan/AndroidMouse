@@ -11,19 +11,22 @@
 - **Stops Microsoft Teams & Slack from switching you to "Away"**
 - Configurable movement interval (1–120 seconds) and range
 - Random movement pattern for natural, undetectable behavior
-- Runs silently in the background even when you switch apps
-- Persistent foreground service with status notification
+- **Runs in the background** even after closing the app
+- Notification appears only while jiggler is active (with a "Stop Jiggler" shortcut)
+- **Jiggler state saved per device** — auto-resumes on reconnect based on last setting
 
 ### 🖱️ Bluetooth Trackpad
 - Smooth cursor control with adjustable sensitivity
 - Single tap → Left click
 - Two-finger tap → Right click
+- Scroll with two-finger drag
 - Recognized as a real HID mouse — no drivers needed on PC
 
 ### 📡 Bluetooth HID
 - Pure Bluetooth connection — no Wi-Fi, no PC software, no cables
 - Works with Windows, macOS, Linux, Android TV and more
 - Remembers last connected device for instant reconnect
+- Prompts to enable Bluetooth if turned off
 
 ### 🔍 Device Management
 - Scan and pair Bluetooth devices directly from the app
@@ -70,21 +73,29 @@
 ```
 
 ### Release (signed AAB)
-1. Copy the keystore template and fill in your values:
-   ```bash
-   cp keystore.properties.example keystore.properties
-   ```
-2. Edit `keystore.properties`:
-   ```properties
-   storeFile=/path/to/your.jks
-   storePassword=your_store_password
-   keyAlias=your_key_alias
-   keyPassword=your_key_password
-   ```
-3. Build:
-   ```bash
-   ./gradlew bundleRelease
-   ```
+
+**Option A — Environment variables (recommended, works across all projects):**
+
+Add to `~/.zshrc`:
+```bash
+export ANDROID_KEYSTORE_FILE="/path/to/your.jks"
+export ANDROID_KEYSTORE_PASSWORD="your_store_password"
+export ANDROID_KEY_ALIAS="your_key_alias"
+export ANDROID_KEY_PASSWORD="your_key_password"
+```
+
+**Option B — Local properties file:**
+```bash
+cp keystore.properties.example keystore.properties
+# Fill in keystore.properties with your values
+```
+
+Then build:
+```bash
+./gradlew bundleRelease
+```
+
+> Environment variables take priority over `keystore.properties` when both are present.
 
 ---
 
@@ -96,7 +107,7 @@ Install dependencies:
 bundle install
 ```
 
-Set your Google Play API key in `~/.zshrc` (or `~/.bashrc`):
+Set your Google Play API key in `~/.zshrc`:
 ```bash
 export SUPPLY_JSON_KEY="/path/to/service-account.json"
 ```
@@ -122,9 +133,10 @@ export SUPPLY_JSON_KEY="/path/to/service-account.json"
 app/src/main/java/com/godofcodes/androidmouse/
 ├── data/
 │   ├── bluetooth/       # BluetoothHidManager, HID descriptor & report builder
-│   ├── local/           # DataStore (preferences, jiggler config)
+│   ├── local/           # DataStore (app prefs, jiggler config, per-device state)
 │   └── repository/      # Repository implementations
 ├── domain/
+│   ├── jiggler/         # JigglerController (background coroutine scope)
 │   ├── model/           # BtDevice, ConnectionState, JigglerConfig, MouseEvent
 │   ├── repository/      # Repository interfaces
 │   └── usecase/         # One use case per action
@@ -137,7 +149,7 @@ app/src/main/java/com/godofcodes/androidmouse/
 │       ├── jiggler/     # Jiggler config screen
 │       └── components/  # MouseButtonBar, TouchpadSurface
 ├── di/                  # Hilt modules
-└── service/             # MouseForegroundService
+└── service/             # MouseForegroundService (active only while jiggler runs)
 ```
 
 ---
