@@ -16,6 +16,8 @@
     <string name="walkthrough_try">Try &#x2192;</string>
 
     <!-- DeviceScanScreen -->
+    <string name="scan_bluetooth_disabled">Bluetooth is turned off</string>
+    <string name="scan_enable_bluetooth">Enable</string>
     <string name="scan_title">Select Device</string>
     <string name="scan_unpair_title">Unpair device?</string>
     <string name="scan_unpair_message">Remove %1$s from paired devices?</string>
@@ -54,5 +56,7 @@
     <!-- Notification -->
     <string name="notification_title">RemotePad</string>
     <string name="notification_text">Bluetooth mouse active</string>
+    <string name="notification_text_jiggler">Jiggler active — keeping PC awake</string>
+    <string name="notification_stop_jiggler">Stop Jiggler</string>
     <string name="notification_channel_name">Mouse Service</string>
 </resources>

@@ -17,5 +17,7 @@ object BluetoothModule {
     @Provides
     @Singleton
     fun provideBluetoothAdapter(@ApplicationContext context: Context): BluetoothAdapter =
-        context.getSystemService(BluetoothManager::class.java).adapter
+        requireNotNull(
+            (context.getSystemService(Context.BLUETOOTH_SERVICE) as? BluetoothManager)?.adapter
+        ) { "Bluetooth adapter is not available on this device" }
 }

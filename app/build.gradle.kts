@@ -16,22 +16,35 @@ android {
         applicationId = "com.godofcodes.androidmouse"
         minSdk = 28
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
         create("release") {
-            val keystoreFile = rootProject.file("keystore.properties")
-            if (keystoreFile.exists()) {
-                val props = Properties()
-                props.load(keystoreFile.inputStream())
-                storeFile = file(props.getProperty("storeFile"))
-                storePassword = props.getProperty("storePassword")
-                keyAlias = props.getProperty("keyAlias")
-                keyPassword = props.getProperty("keyPassword")
+            // Priority: environment variables > keystore.properties
+            val envStoreFile = System.getenv("ANDROID_KEYSTORE_FILE")
+            val envStorePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+            val envKeyAlias = System.getenv("ANDROID_KEY_ALIAS")
+            val envKeyPassword = System.getenv("ANDROID_KEY_PASSWORD")
+
+            if (envStoreFile != null) {
+                storeFile = file(envStoreFile)
+                storePassword = envStorePassword
+                keyAlias = envKeyAlias
+                keyPassword = envKeyPassword
+            } else {
+                val keystoreFile = rootProject.file("keystore.properties")
+                if (keystoreFile.exists()) {
+                    val props = Properties()
+                    props.load(keystoreFile.inputStream())
+                    storeFile = file(props.getProperty("storeFile"))
+                    storePassword = props.getProperty("storePassword")
+                    keyAlias = props.getProperty("keyAlias")
+                    keyPassword = props.getProperty("keyPassword")
+                }
             }
         }
     }

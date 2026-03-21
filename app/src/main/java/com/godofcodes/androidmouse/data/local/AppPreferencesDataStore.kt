@@ -35,4 +35,15 @@ class AppPreferencesDataStore @Inject constructor(
     suspend fun markJigglerTooltipShown() {
         context.appPrefsDataStore.edit { it[Keys.JIGGLER_TOOLTIP_SHOWN] = true }
     }
+
+    fun getJigglerEnabledForDevice(address: String): Flow<Boolean> =
+        context.appPrefsDataStore.data.map { prefs ->
+            prefs[booleanPreferencesKey("jiggler_device_$address")] ?: false
+        }
+
+    suspend fun saveJigglerEnabledForDevice(address: String, enabled: Boolean) {
+        context.appPrefsDataStore.edit { prefs ->
+            prefs[booleanPreferencesKey("jiggler_device_$address")] = enabled
+        }
+    }
 }

@@ -10,6 +10,7 @@ interface BluetoothRepository {
     val connectionState: StateFlow<ConnectionState>
     val discoveredDevices: StateFlow<List<BtDevice>>
     val isDiscovering: StateFlow<Boolean>
+    val isBluetoothEnabled: StateFlow<Boolean>
     val bondStateChanged: Flow<Unit>
     fun getPairedDevices(computersOnly: Boolean = false): List<BtDevice>
     suspend fun connect(device: BtDevice)

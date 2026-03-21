@@ -16,6 +16,8 @@
     <string name="walkthrough_try">Dene &#x2192;</string>
 
     <!-- DeviceScanScreen -->
+    <string name="scan_bluetooth_disabled">Bluetooth kapalı</string>
+    <string name="scan_enable_bluetooth">Aç</string>
     <string name="scan_title">Cihaz Seç</string>
     <string name="scan_unpair_title">Eşleşme kaldırılsın mı?</string>
     <string name="scan_unpair_message">%1$s cihazının eşleşmesi kaldırılsın mı?</string>
@@ -54,5 +56,7 @@
     <!-- Notification -->
     <string name="notification_title">RemotePad</string>
     <string name="notification_text">Bluetooth mouse aktif</string>
+    <string name="notification_text_jiggler">Jiggler aktif — PC uyanık tutuluyor</string>
+    <string name="notification_stop_jiggler">Jiggler\'ı Durdur</string>
     <string name="notification_channel_name">Mouse Servisi</string>
 </resources>

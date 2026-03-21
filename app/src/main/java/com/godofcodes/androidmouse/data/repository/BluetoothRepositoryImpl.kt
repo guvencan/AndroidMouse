@@ -20,6 +20,7 @@ class BluetoothRepositoryImpl @Inject constructor(
     override val connectionState: StateFlow<ConnectionState> = hidManager.connectionState
     override val discoveredDevices: StateFlow<List<BtDevice>> = hidManager.discoveredDevices
     override val isDiscovering: StateFlow<Boolean> = hidManager.isDiscovering
+    override val isBluetoothEnabled: StateFlow<Boolean> = hidManager.isBluetoothEnabled
     override val bondStateChanged: Flow<Unit> = hidManager.bondStateChanged
 
     override fun getPairedDevices(computersOnly: Boolean) = hidManager.getPairedDevices(computersOnly)

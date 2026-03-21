@@ -32,6 +32,9 @@ class ScanViewModel @Inject constructor(
     val isDiscovering: StateFlow<Boolean> = bluetoothRepository.isDiscovering
         .stateIn(viewModelScope, SharingStarted.Eagerly, false)
 
+    val isBluetoothEnabled: StateFlow<Boolean> = bluetoothRepository.isBluetoothEnabled
+        .stateIn(viewModelScope, SharingStarted.Eagerly, true)
+
     private val _computersOnly = MutableStateFlow(true)
     val computersOnly: StateFlow<Boolean> = _computersOnly.asStateFlow()
 

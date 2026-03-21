@@ -1,5 +1,6 @@
 package com.godofcodes.androidmouse.data.bluetooth
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothClass
@@ -11,7 +12,9 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.os.Build
+import androidx.core.content.ContextCompat
 import com.godofcodes.androidmouse.data.local.AppPreferencesDataStore
 import com.godofcodes.androidmouse.domain.model.BtDevice
 import com.godofcodes.androidmouse.domain.model.ConnectionState
@@ -54,12 +57,30 @@ class BluetoothHidManager @Inject constructor(
     private val _bondStateChanged = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
     val bondStateChanged: SharedFlow<Unit> = _bondStateChanged.asSharedFlow()
 
+    private val _isBluetoothEnabled = MutableStateFlow(bluetoothAdapter.isEnabled)
+    val isBluetoothEnabled: StateFlow<Boolean> = _isBluetoothEnabled.asStateFlow()
+
     private var hidDevice: BluetoothHidDevice? = null
     private var connectedDevice: BluetoothDevice? = null
     private var targetDevice: BluetoothDevice? = null
     private var pollJob: Job? = null
     private val reportBuilder = HidReportBuilder()
     private var discoveryReceiverRegistered = false
+
+    private val bluetoothStateReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            val state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR)
+            val enabled = state == BluetoothAdapter.STATE_ON
+            _isBluetoothEnabled.value = enabled
+            if (!enabled) {
+                pollJob?.cancel()
+                connectedDevice = null
+                hidDevice?.unregisterApp()
+                hidDevice = null
+                _connectionState.value = ConnectionState.Idle
+            }
+        }
+    }
 
     private val bondStateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -79,6 +100,7 @@ class BluetoothHidManager @Inject constructor(
     }
 
     init {
+        context.registerReceiver(bluetoothStateReceiver, IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED))
         context.registerReceiver(bondStateReceiver, IntentFilter(BluetoothDevice.ACTION_BOND_STATE_CHANGED))
     }
 
@@ -93,7 +115,7 @@ class BluetoothHidManager @Inject constructor(
     private val hidCallback = object : BluetoothHidDevice.Callback() {
         override fun onAppStatusChanged(pluggedDevice: BluetoothDevice?, registered: Boolean) {
             if (registered) {
-                val device = pluggedDevice ?: targetDevice ?: return
+                val device = targetDevice ?: pluggedDevice ?: return
                 hidDevice?.connect(device)
                 startPolling(device)
             }
@@ -169,6 +191,14 @@ class BluetoothHidManager @Inject constructor(
     }
 
     fun registerAndConnect(target: BluetoothDevice) {
+        if (!bluetoothAdapter.isEnabled) {
+            _connectionState.value = ConnectionState.Error("Bluetooth is disabled")
+            return
+        }
+        if (!hasBluetoothConnectPermission()) {
+            _connectionState.value = ConnectionState.Error("Bluetooth permission not granted")
+            return
+        }
         targetDevice = target
         _connectionState.value = ConnectionState.Connecting
         hidDevice?.unregisterApp()
@@ -203,12 +233,15 @@ class BluetoothHidManager @Inject constructor(
         hidDevice?.sendReport(device, 0, report)
     }
 
-    fun getPairedDevices(computersOnly: Boolean = false): List<BtDevice> =
-        bluetoothAdapter.bondedDevices
+    fun getPairedDevices(computersOnly: Boolean = false): List<BtDevice> {
+        if (!bluetoothAdapter.isEnabled || !hasBluetoothConnectPermission()) return emptyList()
+        return bluetoothAdapter.bondedDevices
             .filter { !computersOnly || it.isComputer() }
             .map { it.toBtDevice(isPaired = true) }
+    }
 
     fun startDiscovery() {
+        if (!bluetoothAdapter.isEnabled || !hasDiscoveryPermission()) return
         _discoveredDevices.value = emptyList()
         _isDiscovering.value = true
         if (!discoveryReceiverRegistered) {
@@ -244,6 +277,20 @@ class BluetoothHidManager @Inject constructor(
             device.javaClass.getMethod("removeBond").invoke(device)
         } catch (_: Exception) {}
     }
+
+    private fun hasBluetoothConnectPermission(): Boolean =
+        Build.VERSION.SDK_INT < Build.VERSION_CODES.S ||
+            ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) ==
+                PackageManager.PERMISSION_GRANTED
+
+    private fun hasDiscoveryPermission(): Boolean =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_SCAN) ==
+                PackageManager.PERMISSION_GRANTED
+        } else {
+            ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) ==
+                PackageManager.PERMISSION_GRANTED
+        }
 
     private fun BluetoothDevice.isComputer(): Boolean =
         bluetoothClass?.majorDeviceClass == BluetoothClass.Device.Major.COMPUTER

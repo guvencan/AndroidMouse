@@ -1,5 +1,6 @@
 package com.godofcodes.androidmouse.presentation.ui.touchpad
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.godofcodes.androidmouse.data.local.AppPreferencesDataStore
@@ -10,13 +11,17 @@ import com.godofcodes.androidmouse.domain.model.MouseEvent
 import com.godofcodes.androidmouse.domain.repository.BluetoothRepository
 import com.godofcodes.androidmouse.domain.usecase.ConnectDeviceUseCase
 import com.godofcodes.androidmouse.domain.usecase.DisconnectUseCase
+import com.godofcodes.androidmouse.domain.usecase.GetJigglerConfigUseCase
 import com.godofcodes.androidmouse.domain.usecase.GetPairedDevicesUseCase
 import com.godofcodes.androidmouse.domain.usecase.SendMouseEventUseCase
+import com.godofcodes.androidmouse.service.MouseForegroundService
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
@@ -29,9 +34,11 @@ class TouchpadViewModel @Inject constructor(
     private val disconnect: DisconnectUseCase,
     private val connectDevice: ConnectDeviceUseCase,
     private val getPairedDevices: GetPairedDevicesUseCase,
+    private val getJigglerConfig: GetJigglerConfigUseCase,
     private val bluetoothRepository: BluetoothRepository,
     private val jigglerController: JigglerController,
     private val appPrefs: AppPreferencesDataStore,
+    @ApplicationContext private val context: Context,
 ) : ViewModel() {
 
     val connectionState: StateFlow<ConnectionState> = bluetoothRepository.connectionState
@@ -58,7 +65,10 @@ class TouchpadViewModel @Inject constructor(
         viewModelScope.launch {
             bluetoothRepository.connectionState.collect { state ->
                 when (state) {
-                    is ConnectionState.Connected -> wasConnected = true
+                    is ConnectionState.Connected -> {
+                        wasConnected = true
+                        restoreJigglerForDevice(state.device.address)
+                    }
                     is ConnectionState.Idle -> if (wasConnected) _navigateToScan.emit(Unit)
                     is ConnectionState.Error -> _navigateToScan.emit(Unit)
                     else -> Unit
@@ -80,6 +90,18 @@ class TouchpadViewModel @Inject constructor(
                     return@launch
                 }
             connectDevice(device)
+        }
+    }
+
+    private fun restoreJigglerForDevice(address: String) {
+        viewModelScope.launch {
+            val enabled = appPrefs.getJigglerEnabledForDevice(address).first()
+            if (enabled) {
+                jigglerController.start(getJigglerConfig().first())
+                context.startForegroundService(MouseForegroundService.startIntent(context))
+            } else {
+                jigglerController.stop()
+            }
         }
     }
 

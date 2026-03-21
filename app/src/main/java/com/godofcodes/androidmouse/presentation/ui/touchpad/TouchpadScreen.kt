@@ -8,6 +8,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BluetoothDisabled
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.MotionPhotosOn
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -50,6 +51,27 @@ fun TouchpadScreen(
                     Text(label)
                 },
                 actions = {
+                    var menuExpanded by remember { mutableStateOf(false) }
+                    Box {
+                        IconButton(onClick = { menuExpanded = true }) {
+                            Icon(Icons.Default.MoreVert, contentDescription = null)
+                        }
+                        DropdownMenu(
+                            expanded = menuExpanded,
+                            onDismissRequest = { menuExpanded = false },
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.cd_disconnect)) },
+                                leadingIcon = {
+                                    Icon(Icons.Default.BluetoothDisabled, contentDescription = null)
+                                },
+                                onClick = {
+                                    menuExpanded = false
+                                    viewModel.disconnect()
+                                },
+                            )
+                        }
+                    }
                     IconButton(onClick = {
                         viewModel.dismissJigglerTooltip()
                         onNavigateToJiggler()
@@ -58,12 +80,6 @@ fun TouchpadScreen(
                             Icons.Default.MotionPhotosOn,
                             contentDescription = stringResource(R.string.cd_jiggler),
                             tint = if (jigglerEnabled) JigglerActiveColor else JigglerInactiveColor,
-                        )
-                    }
-                    IconButton(onClick = { viewModel.disconnect() }) {
-                        Icon(
-                            Icons.Default.BluetoothDisabled,
-                            contentDescription = stringResource(R.string.cd_disconnect),
                         )
                     }
                 },
@@ -140,7 +156,7 @@ private fun JigglerWalkthrough(
         Column(
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .padding(top = 4.dp, end = 20.dp)
+                .padding(top = 4.dp, end = 4.dp)
                 .clickable(
                     interactionSource = remember { MutableInteractionSource() },
                     indication = null,

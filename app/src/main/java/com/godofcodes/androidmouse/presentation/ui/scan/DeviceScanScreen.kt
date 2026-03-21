@@ -1,11 +1,14 @@
 package com.godofcodes.androidmouse.presentation.ui.scan
 
+import android.bluetooth.BluetoothAdapter
+import android.content.Intent
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bluetooth
+import androidx.compose.material.icons.filled.BluetoothDisabled
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Computer
 import androidx.compose.material.icons.filled.LinkOff
@@ -13,6 +16,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -31,6 +35,8 @@ fun DeviceScanScreen(
     val discoveredDevices by viewModel.discoveredDevices.collectAsStateWithLifecycle()
     val isDiscovering by viewModel.isDiscovering.collectAsStateWithLifecycle()
     val computersOnly by viewModel.computersOnly.collectAsStateWithLifecycle()
+    val isBluetoothEnabled by viewModel.isBluetoothEnabled.collectAsStateWithLifecycle()
+    val context = LocalContext.current
     var deviceToUnpair by remember { mutableStateOf<BtDevice?>(null) }
 
     LaunchedEffect(Unit) {
@@ -68,6 +74,43 @@ fun DeviceScanScreen(
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(bottom = 12.dp),
         )
+
+        if (!isBluetoothEnabled) {
+            Card(
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 12.dp),
+            ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.BluetoothDisabled,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onErrorContainer,
+                    )
+                    Spacer(Modifier.width(12.dp))
+                    Text(
+                        text = stringResource(R.string.scan_bluetooth_disabled),
+                        color = MaterialTheme.colorScheme.onErrorContainer,
+                        modifier = Modifier.weight(1f),
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    FilledTonalButton(
+                        onClick = {
+                            try {
+                                @Suppress("DEPRECATION")
+                                context.startActivity(Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE))
+                            } catch (_: Exception) {}
+                        },
+                    ) {
+                        Text(stringResource(R.string.scan_enable_bluetooth))
+                    }
+                }
+            }
+        }
 
         when (connectionState) {
             is ConnectionState.Connecting -> Row(
@@ -125,7 +168,7 @@ fun DeviceScanScreen(
                     )
                 }
             } else {
-                items(pairedDevices, key = { it.address }) { device ->
+                items(pairedDevices, key = { "paired_${it.address}" }) { device ->
                     PairedDeviceItem(
                         device = device,
                         onClick = { viewModel.connect(device) },
@@ -172,7 +215,10 @@ fun DeviceScanScreen(
                 }
             }
 
-            items(discoveredDevices, key = { it.address }) { device ->
+            items(
+                discoveredDevices.filter { d -> pairedDevices.none { it.address == d.address } },
+                key = { "discovered_${it.address}" },
+            ) { device ->
                 DiscoveredDeviceItem(
                     device = device,
                     onPair = { viewModel.pair(device) },
