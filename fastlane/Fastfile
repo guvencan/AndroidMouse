@@ -41,6 +41,12 @@ platform :android do
       json_key: ENV["SUPPLY_JSON_KEY"],
       track: "internal",
       track_promote_to: "alpha",
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: true,
+      skip_upload_changelogs: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
     )
   end
 
@@ -50,6 +56,12 @@ platform :android do
       json_key: ENV["SUPPLY_JSON_KEY"],
       track: "alpha",
       track_promote_to: "production",
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: true,
+      skip_upload_changelogs: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
     )
   end
 
