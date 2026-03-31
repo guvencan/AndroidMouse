@@ -132,14 +132,17 @@ debug {
 - Run `source ~/.zshrc` after editing
 
 ### Lanes
+
+> **Always use `bundle exec fastlane` — never bare `fastlane`.**
+
 | Lane | Command | Description |
 |------|---------|-------------|
-| `build` | `fastlane build` | Build signed release AAB |
-| `internal` | `fastlane internal` | Build + upload to internal testing |
-| `alpha` | `fastlane alpha` | Promote internal → alpha |
-| `production` | `fastlane production` | Promote alpha → production |
-| `metadata` | `fastlane metadata` | Upload store listing & screenshots only |
-| `release` | `fastlane release version:1.1` | Bump version + build + upload internal |
+| `build` | `bundle exec fastlane build` | Build signed release AAB |
+| `internal` | `bundle exec fastlane internal` | Build + upload to internal testing |
+| `alpha` | `bundle exec fastlane alpha` | Promote internal → alpha |
+| `production` | `bundle exec fastlane production` | Promote alpha → production |
+| `metadata` | `bundle exec fastlane metadata` | Upload store listing & screenshots only |
+| `release` | `bundle exec fastlane release version:1.2` | Bump version + build + upload internal |
 
 ### Store Metadata
 - Metadata lives in `fastlane/metadata/android/{locale}/`
