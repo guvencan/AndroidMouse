@@ -9,19 +9,19 @@ Keep your PC awake during presentations, video calls, or when you step away from
 • Keep your status Active during breaks or long meetings
 • Customizable movement interval (1–120 sec) and range
 • Runs silently in the background — even when you switch apps
-• Random movement pattern for natural, undetectable behavior
+• Random movement pattern for natural, realistic behavior
 
 🖱️ BLUETOOTH TRACKPAD
 • Smooth cursor control with adjustable sensitivity
 • Single tap → Left click
 • Two-finger tap → Right click
-• Works like a hardware mouse — no drivers needed on PC
+• Use your phone as a wireless Bluetooth mouse — no drivers needed
 
 📡 BLUETOOTH HID
 • Pure Bluetooth connection — no Wi-Fi required
 • Recognized as a real HID mouse by your PC
 • No software installation needed on the host computer
-• Works with Windows, macOS, Linux, Android TV, and more
+• Works as a wireless mouse with Windows, macOS, Linux, Android TV, and more
 • Remembers last connected device for instant reconnect
 
 🔍 DEVICE MANAGEMENT
@@ -30,14 +30,14 @@ Keep your PC awake during presentations, video calls, or when you step away from
 • Unpair devices with one tap
 • Auto-connect to last used device on launch
 
-WHY REMOTEPAD?
-Most mouse jiggler apps run only on Windows. RemotePad is the Android alternative — carry it in your pocket, connect via Bluetooth in seconds, and keep any PC awake without installing anything.
+WHY USE A MOUSE JIGGLER ON ANDROID?
+Most mouse jiggler and auto mouse mover apps run only on Windows. RemotePad is the Android alternative — carry it in your pocket, connect via Bluetooth in seconds, and keep any PC awake without installing anything.
 
 Perfect for:
 • Remote workers who need to stay active on Teams or Slack
 • Office workers stepping away from their desk
-• Keeping your screen active during presentations
-• Controlling your PC from the couch
+• Keeping your screen awake during presentations
+• Remote control your PC from the couch
 • Replacing a dedicated mouse clicker or jiggler device
 • Any situation where your mouse is out of reach
 

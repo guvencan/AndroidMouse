@@ -9,19 +9,19 @@ Mantén tu PC despierto durante presentaciones, videollamadas o ausencias. Evita
 • Permanece «Activo» durante pausas o reuniones largas
 • Intervalo (1–120 seg.) y rango de movimiento personalizables
 • Funciona en segundo plano aunque cambies de app
-• Patrón aleatorio para comportamiento natural e imperceptible
+• Patrón aleatorio para comportamiento natural y realista
 
 🖱️ TRACKPAD BLUETOOTH
 • Control suave del cursor con sensibilidad ajustable
 • Un toque → Clic izquierdo
 • Dos dedos → Clic derecho
-• No requiere controladores en el PC
+• Usa tu móvil como ratón Bluetooth inalámbrico — sin controladores
 
 📡 BLUETOOTH HID
 • Conexión Bluetooth pura — sin Wi-Fi necesario
 • Reconocido como ratón HID real
 • Sin instalación en el equipo de destino
-• Compatible con Windows, macOS, Linux, Android TV
+• Compatible como ratón inalámbrico con Windows, macOS, Linux, Android TV
 • Recuerda el último dispositivo conectado
 
 🔍 GESTIÓN DE DISPOSITIVOS
@@ -30,14 +30,14 @@ Mantén tu PC despierto durante presentaciones, videollamadas o ausencias. Evita
 • Desemparejar con un toque
 • Conexión automática al iniciar
 
-¿POR QUÉ REMOTEPAD?
-La mayoría de los mouse jiggler solo funcionan en Windows. RemotePad es la alternativa Android — llévalo en el bolsillo, conéctalo en segundos y mantén cualquier PC despierto sin instalar nada.
+¿POR QUÉ UN MOUSE JIGGLER EN ANDROID?
+La mayoría de los mouse jiggler y movedor automático de ratón solo funcionan en Windows. RemotePad es la alternativa Android — llévalo en el bolsillo, conéctalo en segundos y mantén cualquier PC despierto sin instalar nada.
 
 Perfecto para:
 • Teletrabajadores que necesitan mantenerse activos en Teams o Slack
 • Empleados de oficina que se alejan momentáneamente de su escritorio
-• Mantener la pantalla activa durante presentaciones
-• Controlar el PC desde el sofá
+• Mantener la pantalla despierta durante presentaciones
+• Control remoto del PC desde el sofá
 • Reemplazar un jiggler o puntero de presentación independiente
 • Cualquier situación donde el ratón está fuera de alcance
 

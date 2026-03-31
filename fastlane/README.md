@@ -23,13 +23,21 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Upload metadata & screenshots to Play Store (no APK)
 
+### android build
+
+```sh
+[bundle exec] fastlane android build
+```
+
+Build signed release AAB
+
 ### android internal
 
 ```sh
 [bundle exec] fastlane android internal
 ```
 
-Upload AAB to internal testing track
+Build & upload AAB to internal testing track
 
 ### android alpha
 
@@ -46,6 +54,14 @@ Promote internal → alpha
 ```
 
 Promote alpha → production
+
+### android release
+
+```sh
+[bundle exec] fastlane android release
+```
+
+Bump versionCode and versionName, then build internal
 
 ----
 

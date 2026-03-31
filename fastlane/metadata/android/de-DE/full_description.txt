@@ -9,19 +9,19 @@ Halte deinen PC während Präsentationen, Videoanrufen oder Abwesenheit aktiv. V
 • Hält deinen Status in Meetings und Pausen auf „Aktiv"
 • Einstellbares Bewegungsintervall (1–120 Sek.) und -bereich
 • Läuft still im Hintergrund, auch beim App-Wechsel
-• Zufälliges Bewegungsmuster für natürliches, unauffälliges Verhalten
+• Zufälliges Bewegungsmuster für natürliches, realistisches Verhalten
 
 🖱️ BLUETOOTH TRACKPAD
 • Flüssige Cursorbewegung mit einstellbarer Empfindlichkeit
 • Einfacher Tipp → Linksklick
 • Zwei-Finger-Tipp → Rechtsklick
-• Keine Treiber auf dem PC nötig
+• Nutze dein Handy als kabellose Bluetooth-Maus — keine Treiber nötig
 
 📡 BLUETOOTH HID
 • Reine Bluetooth-Verbindung — kein WLAN erforderlich
 • Wird als echte HID-Maus erkannt
 • Keine Installation auf dem Zielgerät nötig
-• Kompatibel mit Windows, macOS, Linux, Android TV
+• Als kabellose Maus kompatibel mit Windows, macOS, Linux, Android TV
 • Merkt sich das zuletzt verbundene Gerät
 
 🔍 GERÄTEVERWALTUNG
@@ -30,14 +30,14 @@ Halte deinen PC während Präsentationen, Videoanrufen oder Abwesenheit aktiv. V
 • Kopplung mit einem Tipp aufheben
 • Automatische Verbindung beim Start
 
-WARUM REMOTEPAD?
-Die meisten Mouse-Jiggler-Apps laufen nur unter Windows. RemotePad ist die Android-Alternative — in der Tasche tragen, in Sekunden per Bluetooth verbinden und jeden PC aktiv halten, ohne etwas zu installieren.
+WARUM EINEN MOUSE JIGGLER AUF ANDROID NUTZEN?
+Die meisten Mouse-Jiggler- und Auto-Mouse-Mover-Apps laufen nur unter Windows. RemotePad ist die Android-Alternative — in der Tasche tragen, in Sekunden per Bluetooth verbinden und jeden PC aktiv halten, ohne etwas zu installieren.
 
 Perfekt für:
 • Remote-Arbeiter, die in Teams oder Slack aktiv bleiben müssen
 • Büroangestellte, die kurz den Schreibtisch verlassen
-• Bildschirm bei Präsentationen aktiv halten
-• PC-Steuerung vom Sofa aus
+• Bildschirm bei Präsentationen wach halten
+• PC-Fernsteuerung vom Sofa aus
 • Ersatz für ein separates Jiggler-Gerät oder Presenter
 • Jede Situation, in der die Maus außer Reichweite ist
 

@@ -13,17 +13,8 @@ gradle-app.setting
 
 # IntelliJ / Android Studio
 *.iml
-.idea/caches
-.idea/libraries
-.idea/modules.xml
-.idea/workspace.xml
-.idea/navEditor.xml
-.idea/assetWizardSettings.xml
-.idea/.gitignore
-.idea/deploymentTargetDropDown.xml
-.idea/migrations.xml
-.idea/compiler.xml
-
+.idea/
+.kotlin/
 # Local config (machine-specific)
 local.properties
 /local.properties

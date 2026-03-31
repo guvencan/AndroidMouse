@@ -9,19 +9,19 @@ Mantenha seu PC ativo durante apresentações, videochamadas ou ausências. Evit
 • Permaneça "Ativo" durante pausas ou reuniões longas
 • Intervalo (1–120 seg.) e alcance de movimento personalizáveis
 • Roda em segundo plano mesmo ao trocar de app
-• Padrão aleatório para comportamento natural e imperceptível
+• Padrão aleatório para comportamento natural e realista
 
 🖱️ TRACKPAD BLUETOOTH
 • Controle suave do cursor com sensibilidade ajustável
 • Um toque → Clique esquerdo
 • Dois dedos → Clique direito
-• Sem drivers no PC
+• Use seu celular como mouse Bluetooth sem fio — sem drivers
 
 📡 BLUETOOTH HID
 • Conexão Bluetooth pura — sem Wi-Fi necessário
 • Reconhecido como mouse HID real
 • Sem instalação no dispositivo de destino
-• Compatível com Windows, macOS, Linux, Android TV
+• Compatível como mouse sem fio com Windows, macOS, Linux, Android TV
 • Lembra o último dispositivo conectado
 
 🔍 GERENCIAMENTO DE DISPOSITIVOS
@@ -30,14 +30,14 @@ Mantenha seu PC ativo durante apresentações, videochamadas ou ausências. Evit
 • Desemparelhar com um toque
 • Conexão automática ao iniciar
 
-POR QUE REMOTEPAD?
-A maioria dos mouse jiggler funciona apenas no Windows. O RemotePad é a alternativa Android — leve no bolso, conecte em segundos e mantenha qualquer PC ativo sem instalar nada.
+POR QUE UM MOUSE JIGGLER NO ANDROID?
+A maioria dos mouse jiggler e movedor automático de mouse funciona apenas no Windows. O RemotePad é a alternativa Android — leve no bolso, conecte em segundos e mantenha qualquer PC ativo sem instalar nada.
 
 Perfeito para:
 • Trabalhadores remotos que precisam ficar ativos no Teams ou Slack
 • Funcionários de escritório que se afastam brevemente da mesa
-• Manter a tela ativa em apresentações
-• Controlar o PC do sofá
+• Manter a tela ativa durante apresentações
+• Controle remoto do PC do sofá
 • Substituir um jiggler ou controle de apresentação dedicado
 • Qualquer situação onde o mouse está fora de alcance
 

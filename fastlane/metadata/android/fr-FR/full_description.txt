@@ -9,19 +9,19 @@ Gardez votre PC éveillé pendant les présentations, les appels vidéo ou vos a
 • Restez « Actif » pendant les pauses ou longues réunions
 • Intervalle (1–120 sec) et amplitude personnalisables
 • Fonctionne en arrière-plan même en changeant d'app
-• Mouvement aléatoire pour un comportement naturel et discret
+• Mouvement aléatoire pour un comportement naturel et réaliste
 
 🖱️ TRACKPAD BLUETOOTH
 • Contrôle fluide du curseur avec sensibilité réglable
 • Un doigt → Clic gauche
 • Deux doigts → Clic droit
-• Aucun pilote requis sur le PC
+• Utilisez votre téléphone comme souris Bluetooth sans fil — aucun pilote requis
 
 📡 BLUETOOTH HID
 • Connexion Bluetooth pure — aucun Wi-Fi requis
 • Reconnu comme une vraie souris HID
 • Aucune installation sur l'ordinateur cible
-• Compatible Windows, macOS, Linux, Android TV
+• Compatible comme souris sans fil avec Windows, macOS, Linux, Android TV
 • Mémorise le dernier appareil connecté
 
 🔍 GESTION DES APPAREILS
@@ -30,14 +30,14 @@ Gardez votre PC éveillé pendant les présentations, les appels vidéo ou vos a
 • Dissocier en un tap
 • Connexion automatique au démarrage
 
-POURQUOI REMOTEPAD ?
-La plupart des mouse jiggler ne fonctionnent que sous Windows. RemotePad est l'alternative Android — emportez-le dans votre poche, connectez-le en quelques secondes et gardez n'importe quel PC éveillé sans rien installer.
+POURQUOI UN MOUSE JIGGLER SUR ANDROID ?
+La plupart des mouse jiggler et déplaceurs automatiques de souris ne fonctionnent que sous Windows. RemotePad est l'alternative Android — emportez-le dans votre poche, connectez-le en quelques secondes et gardez n'importe quel PC éveillé sans rien installer.
 
 Idéal pour :
 • Les télétravailleurs qui doivent rester actifs sur Teams ou Slack
 • Les employés de bureau qui s'éloignent brièvement de leur poste
-• Maintenir l'écran actif lors de présentations
-• Contrôler le PC depuis le canapé
+• Garder l'écran éveillé lors de présentations
+• Contrôler le PC à distance depuis le canapé
 • Remplacer un jiggler ou une télécommande de présentation
 • Toute situation où la souris est hors de portée
 
